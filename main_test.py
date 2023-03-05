@@ -38,6 +38,8 @@ def resize_unscale(img, new_shape=(640, 640), color=114):
     return canvas, r, dw, dh, new_unpad_w, new_unpad_h  
 
 def infer(frame, Infer_session):
+
+    conf_list = []
     height, width, _ = frame.shape 
     img_rgb = frame[:, :, ::-1].copy()
 
@@ -94,8 +96,8 @@ def infer(frame, Infer_session):
         x1, y1, x2, y2, conf, label = boxes[i]
         x1, y1, x2, y2, label = int(x1), int(y1), int(x2), int(y2), int(label)
         img_merge = cv2.rectangle(img_merge, (x1, y1), (x2, y2), (0, 255, 0), 2, 2)
-        return conf
-    
+        conf_list.append(conf)
+
     da_seg_mask = da_seg_mask * 255
     da_seg_mask = da_seg_mask.astype(np.uint8)
     da_seg_mask = cv2.resize(da_seg_mask, (width, height),
@@ -105,17 +107,19 @@ def infer(frame, Infer_session):
     ll_seg_mask = ll_seg_mask.astype(np.uint8)
     ll_seg_mask = cv2.resize(ll_seg_mask, (width, height),
                              interpolation=cv2.INTER_LINEAR)
-
     
     img_det = show_seg_result(img_merge, (da_seg_mask, ll_seg_mask), _, _, is_demo=True)
-    cv2.imshow("image",img_det)
-    cv2.waitKey(1)
+    #cv2.imshow("image",img_det)
+    #cv2.waitKey(1)
+    return img_det, conf_list
 
 if __name__ == "__main__":
     infer_n = load_model("/home/vimal/Project/models/yolop-640-640.onnx")
     cap = cv2.VideoCapture("/dev/video0")
     while(cap.isOpened()):
         ret, frame = cap.read()
-        conf = infer(frame, infer_n)
-        print(conf)
-            
+        img_det, conf = infer(frame, infer_n)
+        if conf:
+            print(conf[0])
+        cv2.imshow("",img_det)
+        cv2.waitKey(1)

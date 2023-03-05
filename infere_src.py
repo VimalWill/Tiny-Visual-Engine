@@ -113,13 +113,3 @@ def infer(frame, Infer_session):
     #cv2.waitKey(1)
     return img_det, conf_list
 
-if __name__ == "__main__":
-    infer_n = load_model("/home/vimal/Project/models/yolop-640-640.onnx")
-    cap = cv2.VideoCapture("/dev/video0")
-    while(cap.isOpened()):
-        ret, frame = cap.read()
-        img_det, conf = infer(frame, infer_n)
-        if conf:
-            print(conf[0])
-        cv2.imshow("",img_det)
-        cv2.waitKey(1)

@@ -18,9 +18,9 @@ if __name__ == "__main__":
         img_det, conf = infer(frame, infer_se)
         if not len(conf) == 0:
             if(conf[-1] >= 70):
-                md.start_stop(True)
-            else:
                 md.start_stop(False)
+            else:
+                md.start_stop(True)
 
         cv2.imshow("",img_det)
         cv2.waitKey(1)

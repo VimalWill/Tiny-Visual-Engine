@@ -7,8 +7,8 @@ import torch
 import threading
 
 def load_model(model_path):
-    ort.set_default_logger_severity(4)
-    ort_inference = ort.InferenceSession(model_path)
+    #ort.set_default_logger_severity(4)
+    ort_inference = ort.InferenceSession(model_path,providers=ort.get_available_providers())
     print("model loaded")
     return ort_inference
 

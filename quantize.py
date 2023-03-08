@@ -1,3 +1,4 @@
+#Int8 Quantizer 
 def quantize_onnx_model(onnx_model_path, quantized_model_path):
     from onnxruntime.quantization import quantize_dynamic, QuantType
     import onnx

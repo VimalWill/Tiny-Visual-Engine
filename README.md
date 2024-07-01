@@ -8,3 +8,8 @@ AI model dynamically quantized for INT8 and deployed onto NVIDIA's Jetson Nano v
 
 ### Additional Information 
 The project is a part of undergrad program of Anna University, Chennai, India, and all rights reserved to the university
+
+### Citation
+```
+Bhavanisankari, S., William, V., & Sachin, A. (2023). Design and Training of AI Agent using Deep Q - Learning and Carla. *International Journal of Scientific Research in Science, Engineering and Technology (IJSRSET)*, 10(1), 74-81.
+```

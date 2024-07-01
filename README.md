@@ -4,8 +4,7 @@ A part of Autonomous car powered by "Deep Reinforcement Learning Model" and the 
 simulated environment called Carla and tested in the real-time. 
 
 ### Hardware & Model Deployment 
-AI model dynamically quantized for INT8 and deployed onto NVIDIA's Jetson Nano version. Eventhough the visual preception subsystem can 
-work on resource-constrained system, yet the DQL model's performance is not up to the level 
+AI model dynamically quantized for INT8 and deployed onto NVIDIA's Jetson Nano version. Eventhough the visual preception subsystem can work on resource-constrained system, yet the DQL model's performance is not up to the level. Feel free to check out the [demo](https://drive.google.com/file/d/1i_Ozc9cvituXRoM7Q_NsZlngLDh0dT7H/view?usp=drive_link) for entire autonomous system. 
 
-### Demo 
-<iframe src="https://drive.google.com/file/d/1i_Ozc9cvituXRoM7Q_NsZlngLDh0dT7H/view?usp=sharing" width="640" height="480" allow="autoplay"></iframe>
+### Additional Information 
+The project is a part of undergrad program of Anna University, Chennai, India, and all rights reserved to the university

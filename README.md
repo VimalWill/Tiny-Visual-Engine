@@ -11,5 +11,12 @@ The project is a part of undergrad program of Anna University, Chennai, India, a
 
 ### Citation
 ```
-Bhavanisankari, S., William, V., & Sachin, A. (2023). Design and Training of AI Agent using Deep Q - Learning and Carla. *International Journal of Scientific Research in Science, Engineering and Technology (IJSRSET)*, 10(1), 74-81.
+@article{bhavanisankari2023ai,
+  title={Design and Training of AI Agent using Deep Q - Learning and Carla},
+  author={Bhavanisankari, S. and William, V. and Sachin, A.},
+  journal={International Journal of Scientific Research in Science, Engineering and Technology (IJSRSET)},
+  pages={74-81},
+  year={2023}
+}
+
 ```
